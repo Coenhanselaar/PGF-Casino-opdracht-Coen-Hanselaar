@@ -23,7 +23,8 @@ birth_day = int(birth_day)
 birth_month = int(birth_month)
 birth_year = int(birth_year)
 age = CURRENT_YEAR - birth_year
-#TODO uitvinden hoe je een date.today() ophaald in python. voorlopig opgelost met een constant
+#TODO hoe kan ik hier de invoer valideren?
+#TODO uitvinden hoe je een date.today() ophaald in python. voorlopig opgelost met een constante
 gender = input('Voer hier uw geslacht in M/V/X: ').strip().upper()
 starting_budget = float(input('Wat is uw startbudget: €').strip())
 number_of_games = int(input('Hoe veel spellen gaat u spelen (€5,- per spel): ').strip())
@@ -127,6 +128,7 @@ while True:
             continue
 
     bet_amount = float(input("Hoe veel wilt u inzetten: €"))
+    #TODO traceback error. lege waarde kan niet omgezet worden naar float
 
     if bet_amount > 0 and remaining_balance >= bet_amount:
         spin = (round_number * 7) % 37
