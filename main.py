@@ -1,16 +1,16 @@
 #Variabelen
 
-first_name =input('voer hier uw voornaam in: ').capitalize()
-last_name = input('voer hier uw achternaam in: ').capitalize()
-date_of_birth = input('Voer hier uw geboortedatum in (dd-mm-yyyy): ')
-gender = input('Voer hier uw geslacht in M/V/X: ').upper()
+# first_name =input('voer hier uw voornaam in: ').capitalize()
+# last_name = input('voer hier uw achternaam in: ').capitalize()
+# date_of_birth = input('Voer hier uw geboortedatum in (dd-mm-yyyy): ')
+# gender = input('Voer hier uw geslacht in M/V/X: ').upper()
 
 # Testwaardes
 
-# first_name ='John'
-# last_name = 'Doe'
-# date_of_birth = '10-10-2001'
-# gender = 'M'
+first_name ='John'
+last_name = 'Doe'
+date_of_birth = '10-10-2001'
+gender = 'M'
 
 starting_budget = float(input('Wat is uw startbudget: €'))
 number_of_games = int(input('Hoe veel spellen gaat u spelen (€5,- per spel): '))
