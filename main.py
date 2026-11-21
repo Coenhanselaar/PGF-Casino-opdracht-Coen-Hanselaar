@@ -3,15 +3,23 @@
 ENTRANCE_FEE = 15.0
 CONSUMPTION_COST = 2.5
 COST_PER_GAME = 5.0
-
+MIN_AGE = 18
+CURRENT_YEAR = 2026
 #Onafhankelijke Variabelen
 
 first_name =input('voer hier uw voornaam in: ').strip().capitalize()
 last_name = input('voer hier uw achternaam in: ').strip().capitalize()
-date_of_birth = input('Voer hier uw geboortedatum in (dd-mm-yyyy): ')
+date_of_birth = input('Voer hier uw geboortedatum in (dd-mm-yyyy): ').strip()
+birth_day, birth_month, birth_year = date_of_birth.split("-")
+birth_day = int(birth_day)
+birth_month = int(birth_month)
+birth_year = int(birth_year)
+age = CURRENT_YEAR - birth_year
+#TODO uitvinden hoe je een date.today() ophaald in python. voorlopig opgelost met een constant
 gender = input('Voer hier uw geslacht in M/V/X: ').strip().upper()
 starting_budget = float(input('Wat is uw startbudget: €').strip())
 number_of_games = int(input('Hoe veel spellen gaat u spelen (€5,- per spel): ').strip())
+
 
 # Testwaardes
 
@@ -40,9 +48,10 @@ elif gender == 'V':
     salutation = 'mevrouw '
 else:
     salutation = ''
-
 #expres geen/lege aanhef bij elk andere invoer dan M of V.
-
+if age < MIN_AGE:
+    print(f'Toegang geweigerd. U bent onder de 18.')
+    exit(1)
 print(
     '\n'
     'Casino de Gouden Driehoek\n'
@@ -51,8 +60,8 @@ print(
 )
 
 print(
-    
-    f"{greeting}{salutation}"  
+
+    f"{greeting}{salutation}"
     f'{first_name} {last_name}\n'
     '\n'
     f'Startbudget: €{starting_budget:.2f}\n'
@@ -62,7 +71,6 @@ print(
     f'{message}'
     '\n'
 )
-#TODO toegang nog uit te breiden met leeftijdscontrole
 
 #Aparte overview voor alle gegevens. Vond ik zelf netter in een los overzicht.
 overview_costs = input('Wilt u nog een apart kostenoverzicht (Y/N)?').strip().upper()
