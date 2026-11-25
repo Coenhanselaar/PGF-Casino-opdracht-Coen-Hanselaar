@@ -1,3 +1,6 @@
+import random
+#volledige random module geïmporteerd. mogelijk meer functies uit deze module nodig.
+
 #Constanten
 
 ENTRANCE_FEE = 15.0
@@ -131,7 +134,8 @@ while True:
     #TODO traceback error. lege waarde kan niet omgezet worden naar float
 
     if bet_amount > 0 and remaining_balance >= bet_amount:
-        spin = (round_number * 7) % 37
+        spin = random.randint(0, 36)
+
         odd_even = 'geen' if spin == 0 else ('even' if spin % 2 == 0 else 'oneven')
 
         if spin == 0:
